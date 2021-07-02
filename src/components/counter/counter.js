@@ -1,20 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Chip from "@material-ui/core/Chip";
 import IconButton from "@material-ui/core/IconButton";
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 
 const Counter = ({ value, handleRemoveCounter }) => {
   const [timer, settimer] = useState(0);
+  const intervalId = useRef();
+
+  const increaseCount = () => settimer((prevCount) => prevCount + 1);
 
   useEffect(() => {
-    let intervalId = null;
-    intervalId = setInterval(() => {
-      settimer((prevCount) => prevCount + 1);
-    }, 1000);
-
-    return () => clearInterval(intervalId);
+    intervalId.current = setInterval(increaseCount, 1000);
+    return () => clearInterval(intervalId.current);
   }, [timer]);
-  
+
   return (
     <div
       style={{
