@@ -17,7 +17,7 @@ And the counter should have a start/stop/delete button.
 
 ## Note
 ```
-You need to use setInterval for the counters
+You need to use setInterval for the counters, this is mandatory.
 ```
 
 ```
