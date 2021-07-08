@@ -17,6 +17,10 @@ And the counter should have a start/stop/delete button.
 
 ## Note
 ```
+You need to use setInterval for the counters, this is mandatory.
+```
+
+```
 We can add Multiple counter by clicking on Add Counter Button (Max 4 counter can be added)
 ```
 ```
